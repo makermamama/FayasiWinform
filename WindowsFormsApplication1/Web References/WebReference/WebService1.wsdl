@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SeletOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeletOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeletOneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpDataOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpDataOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpDataOneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsetOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsetOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsetOneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelectOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelectOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelectOneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeletAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeletAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SeletAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WH_Out">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaseNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NetPointNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WH_OutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WH_OutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNetPointInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CaseNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNetPointInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNetPointInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SeletOneSoapIn">
+    <wsdl:part name="parameters" element="tns:SeletOne" />
+  </wsdl:message>
+  <wsdl:message name="SeletOneSoapOut">
+    <wsdl:part name="parameters" element="tns:SeletOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpDataOneSoapIn">
+    <wsdl:part name="parameters" element="tns:UpDataOne" />
+  </wsdl:message>
+  <wsdl:message name="UpDataOneSoapOut">
+    <wsdl:part name="parameters" element="tns:UpDataOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsetOneSoapIn">
+    <wsdl:part name="parameters" element="tns:InsetOne" />
+  </wsdl:message>
+  <wsdl:message name="InsetOneSoapOut">
+    <wsdl:part name="parameters" element="tns:InsetOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelectOneSoapIn">
+    <wsdl:part name="parameters" element="tns:DelectOne" />
+  </wsdl:message>
+  <wsdl:message name="DelectOneSoapOut">
+    <wsdl:part name="parameters" element="tns:DelectOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeletAllSoapIn">
+    <wsdl:part name="parameters" element="tns:SeletAll" />
+  </wsdl:message>
+  <wsdl:message name="SeletAllSoapOut">
+    <wsdl:part name="parameters" element="tns:SeletAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="WH_OutSoapIn">
+    <wsdl:part name="parameters" element="tns:WH_Out" />
+  </wsdl:message>
+  <wsdl:message name="WH_OutSoapOut">
+    <wsdl:part name="parameters" element="tns:WH_OutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNetPointInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNetPointInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNetPointInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNetPointInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SeletOneHttpGetIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SeletOneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpDataOneHttpGetIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpDataOneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsetOneHttpGetIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsetOneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DelectOneHttpGetIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelectOneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SeletAllHttpGetIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SeletAllHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WH_OutHttpGetIn">
+    <wsdl:part name="CaseNum" type="s:string" />
+    <wsdl:part name="NetPointNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WH_OutHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNetPointInfoHttpGetIn">
+    <wsdl:part name="CaseNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNetPointInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SeletOneHttpPostIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SeletOneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpDataOneHttpPostIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpDataOneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsetOneHttpPostIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsetOneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DelectOneHttpPostIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelectOneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SeletAllHttpPostIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SeletAllHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WH_OutHttpPostIn">
+    <wsdl:part name="CaseNum" type="s:string" />
+    <wsdl:part name="NetPointNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WH_OutHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNetPointInfoHttpPostIn">
+    <wsdl:part name="CaseNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNetPointInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="SeletOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查找一条记录</wsdl:documentation>
+      <wsdl:input message="tns:SeletOneSoapIn" />
+      <wsdl:output message="tns:SeletOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpDataOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">跟新一条记录</wsdl:documentation>
+      <wsdl:input message="tns:UpDataOneSoapIn" />
+      <wsdl:output message="tns:UpDataOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsetOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入一条记录</wsdl:documentation>
+      <wsdl:input message="tns:InsetOneSoapIn" />
+      <wsdl:output message="tns:InsetOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelectOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除一条记录</wsdl:documentation>
+      <wsdl:input message="tns:DelectOneSoapIn" />
+      <wsdl:output message="tns:DelectOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户登陆</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeletAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询返回数据集</wsdl:documentation>
+      <wsdl:input message="tns:SeletAllSoapIn" />
+      <wsdl:output message="tns:SeletAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WH_Out">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">出库</wsdl:documentation>
+      <wsdl:input message="tns:WH_OutSoapIn" />
+      <wsdl:output message="tns:WH_OutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetPointInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取网点信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNetPointInfoSoapIn" />
+      <wsdl:output message="tns:GetNetPointInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService1HttpGet">
+    <wsdl:operation name="SeletOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查找一条记录</wsdl:documentation>
+      <wsdl:input message="tns:SeletOneHttpGetIn" />
+      <wsdl:output message="tns:SeletOneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpDataOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">跟新一条记录</wsdl:documentation>
+      <wsdl:input message="tns:UpDataOneHttpGetIn" />
+      <wsdl:output message="tns:UpDataOneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsetOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入一条记录</wsdl:documentation>
+      <wsdl:input message="tns:InsetOneHttpGetIn" />
+      <wsdl:output message="tns:InsetOneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelectOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除一条记录</wsdl:documentation>
+      <wsdl:input message="tns:DelectOneHttpGetIn" />
+      <wsdl:output message="tns:DelectOneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户登陆</wsdl:documentation>
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeletAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询返回数据集</wsdl:documentation>
+      <wsdl:input message="tns:SeletAllHttpGetIn" />
+      <wsdl:output message="tns:SeletAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WH_Out">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">出库</wsdl:documentation>
+      <wsdl:input message="tns:WH_OutHttpGetIn" />
+      <wsdl:output message="tns:WH_OutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetPointInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取网点信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNetPointInfoHttpGetIn" />
+      <wsdl:output message="tns:GetNetPointInfoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService1HttpPost">
+    <wsdl:operation name="SeletOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查找一条记录</wsdl:documentation>
+      <wsdl:input message="tns:SeletOneHttpPostIn" />
+      <wsdl:output message="tns:SeletOneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpDataOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">跟新一条记录</wsdl:documentation>
+      <wsdl:input message="tns:UpDataOneHttpPostIn" />
+      <wsdl:output message="tns:UpDataOneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsetOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入一条记录</wsdl:documentation>
+      <wsdl:input message="tns:InsetOneHttpPostIn" />
+      <wsdl:output message="tns:InsetOneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelectOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除一条记录</wsdl:documentation>
+      <wsdl:input message="tns:DelectOneHttpPostIn" />
+      <wsdl:output message="tns:DelectOneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户登陆</wsdl:documentation>
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SeletAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询返回数据集</wsdl:documentation>
+      <wsdl:input message="tns:SeletAllHttpPostIn" />
+      <wsdl:output message="tns:SeletAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WH_Out">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">出库</wsdl:documentation>
+      <wsdl:input message="tns:WH_OutHttpPostIn" />
+      <wsdl:output message="tns:WH_OutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetPointInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取网点信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNetPointInfoHttpPostIn" />
+      <wsdl:output message="tns:GetNetPointInfoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeletOne">
+      <soap:operation soapAction="http://tempuri.org/SeletOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpDataOne">
+      <soap:operation soapAction="http://tempuri.org/UpDataOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsetOne">
+      <soap:operation soapAction="http://tempuri.org/InsetOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelectOne">
+      <soap:operation soapAction="http://tempuri.org/DelectOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeletAll">
+      <soap:operation soapAction="http://tempuri.org/SeletAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WH_Out">
+      <soap:operation soapAction="http://tempuri.org/WH_Out" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetPointInfo">
+      <soap:operation soapAction="http://tempuri.org/GetNetPointInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SeletOne">
+      <soap12:operation soapAction="http://tempuri.org/SeletOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpDataOne">
+      <soap12:operation soapAction="http://tempuri.org/UpDataOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsetOne">
+      <soap12:operation soapAction="http://tempuri.org/InsetOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelectOne">
+      <soap12:operation soapAction="http://tempuri.org/DelectOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeletAll">
+      <soap12:operation soapAction="http://tempuri.org/SeletAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WH_Out">
+      <soap12:operation soapAction="http://tempuri.org/WH_Out" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetPointInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetNetPointInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1HttpGet" type="tns:WebService1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SeletOne">
+      <http:operation location="/SeletOne" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpDataOne">
+      <http:operation location="/UpDataOne" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsetOne">
+      <http:operation location="/InsetOne" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelectOne">
+      <http:operation location="/DelectOne" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeletAll">
+      <http:operation location="/SeletAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WH_Out">
+      <http:operation location="/WH_Out" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetPointInfo">
+      <http:operation location="/GetNetPointInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1HttpPost" type="tns:WebService1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SeletOne">
+      <http:operation location="/SeletOne" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpDataOne">
+      <http:operation location="/UpDataOne" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsetOne">
+      <http:operation location="/InsetOne" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelectOne">
+      <http:operation location="/DelectOne" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeletAll">
+      <http:operation location="/SeletAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WH_Out">
+      <http:operation location="/WH_Out" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetPointInfo">
+      <http:operation location="/GetNetPointInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://192.168.1.122:8087/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://192.168.1.122:8087/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1HttpGet" binding="tns:WebService1HttpGet">
+      <http:address location="http://192.168.1.122:8087/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1HttpPost" binding="tns:WebService1HttpPost">
+      <http:address location="http://192.168.1.122:8087/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
